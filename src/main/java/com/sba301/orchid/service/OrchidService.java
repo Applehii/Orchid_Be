@@ -8,7 +8,7 @@ import java.util.List;
 public interface OrchidService {
     Orchid createOrchid(Orchid orchid);
     Orchid updateOrchid(Orchid orchid);
-    void deleteOrchid(String id);
+    void deleteOrchid(Integer id);
     Orchid getOrchidById(String id);
     List<Orchid> getAllOrchids();
     Page<Orchid> getOrchids(String name, String categoryId, Boolean isNatural, Integer from, Integer to, int page, int size);

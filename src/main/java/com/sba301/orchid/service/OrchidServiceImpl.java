@@ -3,6 +3,7 @@ package com.sba301.orchid.service;
 import com.sba301.orchid.pojo.Orchid;
 import com.sba301.orchid.repository.OrchidRepository;
 import jakarta.persistence.criteria.Predicate;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -29,10 +30,10 @@ public class OrchidServiceImpl implements OrchidService {
     }
 
     @Override
-    public void deleteOrchid(String id) {
-        Orchid orchid = orchidRepository.findById(Integer.parseInt(id))
-                .orElseThrow(() -> new IllegalArgumentException("Orchid with ID " + id + " does not exist."));
-        orchidRepository.delete(orchid);
+    @Transactional
+    public void deleteOrchid(Integer id) {
+        orchidRepository.deleteById(id);
+
     }
 
     @Override

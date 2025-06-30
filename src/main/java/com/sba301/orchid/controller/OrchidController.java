@@ -45,5 +45,12 @@ public class OrchidController {
     public ResponseEntity<Orchid> updateOrchid(@PathVariable String id, @RequestBody Orchid orchid) {
         return ResponseEntity.ok(orchidService.updateOrchid(orchid));
     }
+    // Thêm vào OrchidController.java
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteOrchid(@PathVariable int id) {
+        orchidService.deleteOrchid(id);
+        return ResponseEntity.ok().build();
+    }
 }
 
