@@ -46,7 +46,7 @@ public class OrderController {
             detail.setPrice(orchid.getPrice());
 
             totalAmount += orchid.getPrice() * item.getQuantity();
-            detail.setOrder(order); // Liên kết ngược lại Order
+            detail.setOrder(order);
 
             order.getOrderDetails().add(detail); // Thêm vào danh sách
         }
