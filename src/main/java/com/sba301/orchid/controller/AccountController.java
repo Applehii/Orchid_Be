@@ -1,14 +1,15 @@
 package com.sba301.orchid.controller;
 
+import com.nimbusds.jose.JOSEException;
 import com.sba301.orchid.config.AuthContext;
 import com.sba301.orchid.dto.SigninRequest;
 import com.sba301.orchid.pojo.Account;
-import com.sba301.orchid.pojo.Order;
 import com.sba301.orchid.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -38,6 +39,11 @@ public class AccountController {
         return ResponseEntity.ok(accountService.getAccountById(authContext.getUserId()));
     }
 
+    @PostMapping("/refresh")
+    ResponseEntity<String> authenticate(@RequestBody String request)
+            throws ParseException, JOSEException {
+        return ResponseEntity.ok( accountService.refreshToken(request));
+    }
 
 
 }
