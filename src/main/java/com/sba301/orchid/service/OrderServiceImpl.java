@@ -54,9 +54,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getOrdersByAccountId(String accountId) {
+    public List<Order> getOrdersByAccountId(Integer accountId) {
         return orderRepository.findAll().stream()
-                .filter(order -> order.getAccount().getAccountId().equals(Integer.parseInt(accountId)))
+                .filter(order -> order.getAccount().getAccountId().equals(accountId))
                 .toList();
     }
 

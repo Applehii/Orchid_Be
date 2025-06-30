@@ -1,5 +1,6 @@
 package com.sba301.orchid.controller;
 
+import com.sba301.orchid.config.AuthContext;
 import com.sba301.orchid.dto.CartItem;
 import com.sba301.orchid.pojo.Account;
 import com.sba301.orchid.pojo.Order;
@@ -8,7 +9,10 @@ import com.sba301.orchid.pojo.Orchid;
 import com.sba301.orchid.repository.AccountRepository;
 import com.sba301.orchid.repository.OrderRepository;
 import com.sba301.orchid.repository.OrchidRepository;
+import com.sba301.orchid.service.AccountService;
+import com.sba301.orchid.service.OrderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -21,7 +25,10 @@ public class OrderController {
 
     private final OrderRepository orderRepository;
     private final AccountRepository accountRepository;
+    private final AccountService accountService;
+    private final AuthContext authContext;
     private final OrchidRepository orchidRepository;
+    private final OrderService orderService;
 
     @PostMapping("/checkout/{accountId}")
     public String checkout(@PathVariable Integer accountId, @RequestBody List<CartItem> cartItems) {
@@ -56,5 +63,11 @@ public class OrderController {
         orderRepository.save(order);
 
         return "Checkout successful";
+    }
+
+    @GetMapping("/accounts/me/orders")
+    public ResponseEntity<List<Order>> getMyOrders() {
+        Account account = accountService.getAccountById(authContext.getUserId());
+        return ResponseEntity.ok(orderService.getOrdersByAccountId(account.getAccountId()));
     }
 }

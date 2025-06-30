@@ -10,6 +10,6 @@ public interface OrderService {
     Order updateOrder(Order order);
     void deleteOrder(String id);
     Order getOrderById(String id);
-    List<Order> getOrdersByAccountId(String accountId);
+    List<Order> getOrdersByAccountId(Integer accountId);
     List<Order> getAllOrders();
 }
