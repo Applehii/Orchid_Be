@@ -42,7 +42,9 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account createAccount(Account account) {
         account.setPassword(passwordEncoder.encode(account.getPassword()));
-        account.setRole(roleRepository.findByRoleName("USER"));
+        if (account.getRole() == null) {
+            account.setRole(roleRepository.findByRoleName("USER"));
+        }
         return accountRepository.save(account);
     }
 
@@ -53,7 +55,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Account getAccountById(String id) {
-        return accountRepository.findById(Integer.parseInt(id))
+        return accountRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Account with ID " + id + " does not exist."));
     }
 

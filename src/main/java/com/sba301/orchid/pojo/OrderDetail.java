@@ -1,33 +1,21 @@
 package com.sba301.orchid.pojo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Builder;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
-@Entity
-@Table(name = "order_details")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class OrderDetail {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "orchid_id")
-    private Orchid orchid;
+    @DBRef
+    private Orchid orchid;  // Tham chiếu Orchid
 
-    @Column(name = "price")
     private Double price;
 
-    @Column(name = "quantity", nullable = false)
     private Integer quantity = 1;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "order_id")
-    @JsonIgnore
-    private Order order;
 }

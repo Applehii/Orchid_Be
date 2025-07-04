@@ -24,14 +24,14 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public void deleteRole(String id) {
-        Role role = roleRepository.findById(Integer.parseInt(id))
+        Role role = roleRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Role with ID " + id + " does not exist."));
         roleRepository.delete(role);
     }
 
     @Override
     public Role getRoleById(String id) {
-        return roleRepository.findById(Integer.parseInt(id))
+        return roleRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Role with ID " + id + " does not exist."));
     }
 

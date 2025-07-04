@@ -25,14 +25,14 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void deleteCategory(String id) {
-        Category category = categoryRepository.findById(Integer.parseInt(id))
+        Category category = categoryRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Category with ID " + id + " does not exist."));
         categoryRepository.delete(category);
     }
 
     @Override
     public Category getCategoryById(String id) {
-        return categoryRepository.findById(Integer.parseInt(id))
+        return categoryRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Category with ID " + id + " does not exist."));
     }
 

@@ -1,37 +1,35 @@
 package com.sba301.orchid.pojo;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Builder;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "orders")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@Document(collection = "orders")
 public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_id")
+    @Id
+    private String id;
+
+    @DBRef
     private Account account;
 
-    @Column(name = "order_date", nullable = false)
     private LocalDate orderDate;
 
-    @Column(name = "order_status")
     private String orderStatus = "pending";
 
-    @Column(name = "total_amount")
     private Double totalAmount;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<OrderDetail> orderDetails =new ArrayList<>();
+    private List<OrderDetail> orderDetails = new ArrayList<>();
 }

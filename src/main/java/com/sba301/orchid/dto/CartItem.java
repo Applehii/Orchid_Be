@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class CartItem {
-    private Integer orchidId;
+    private String orchidId;
     private Integer quantity;
 }

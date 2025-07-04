@@ -119,6 +119,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Phalaenopsis Aphrodite")
                             .orchidDescription("A beautiful Phalaenopsis orchid with white petals and a yellow center.")
                             .price(150000.0)
+                            .orchidUrl("https://images.unsplash.com/photo-1567957452651-302037461536?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
                             .category(category1)
                             .build());
 
@@ -127,6 +128,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Cattleya Walkeriana")
                             .orchidDescription("A stunning Cattleya orchid with vibrant purple petals.")
                             .price(200000.0)
+                            .orchidUrl("https://cdn.pixabay.com/photo/2017/06/18/16/29/orchid-2416323_1280.jpg")
                             .category(category2)
                             .build());
 
@@ -135,6 +137,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Dendrobium Nobile")
                             .orchidDescription("A classic Dendrobium orchid with delicate white flowers.")
                             .price(120000.0)
+                            .orchidUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Little_orchid2.jpg/1200px-Little_orchid2.jpg?20091022203919")
                             .category(category3)
                             .build());
 
@@ -143,6 +146,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Vanda Miss Joaquim")
                             .orchidDescription("A unique Vanda orchid with striking purple and yellow flowers.")
                             .price(180000.0)
+                            .orchidUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Little_orchid_D1102a.jpg/1200px-Little_orchid_D1102a.jpg?20121011205623")
                             .category(category4)
                             .build());
 
@@ -151,6 +155,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Oncidium Sharry Baby")
                             .orchidDescription("A fragrant Oncidium orchid with chocolate-scented flowers.")
                             .price(160000.0)
+                            .orchidUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Little_orchid_D1102a.jpg/1200px-Little_orchid_D1102a.jpg?20121011205623")
                             .category(category5)
                             .build());
 
@@ -159,6 +164,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Paphiopedilum Maudiae")
                             .orchidDescription("A beautiful Paphiopedilum orchid with unique slipper-shaped flowers.")
                             .price(220000.0)
+                            .orchidUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Little_orchid_D1205b.jpg/1200px-Little_orchid_D1205b.jpg?20121019205734")
                             .category(category6)
                             .build());
 
@@ -167,6 +173,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Cymbidium Golden Elf")
                             .orchidDescription("A stunning Cymbidium orchid with golden-yellow flowers.")
                             .price(250000.0)
+                            .orchidUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Little_orchid_D1304.jpg/1200px-Little_orchid_D1304.jpg?20130711212555")
                             .category(category7)
                             .build());
 
@@ -175,6 +182,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Phalaenopsis Sogo Yukidian")
                             .orchidDescription("A popular Phalaenopsis orchid with large white flowers and a yellow center.")
                             .price(170000.0)
+                            .orchidUrl("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXn9UTe7FuoTz2tezGObR-nKJBEJFBP_hB4w&s")
                             .category(category1)
                             .build());
 
@@ -183,6 +191,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Cattleya Percivaliana")
                             .orchidDescription("A rare Cattleya orchid with vibrant pink and white flowers.")
                             .price(230000.0)
+                            .orchidUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Falenopsis_Flower.jpg/1200px-Falenopsis_Flower.jpg?20081114183219")
                             .category(category2)
                             .build());
 
@@ -191,6 +200,7 @@ public class OrchidApplication implements CommandLineRunner {
                             .orchidName("Dendrobium Phalaenopsis")
                             .orchidDescription("A hybrid Dendrobium orchid with large, showy flowers.")
                             .price(140000.0)
+                            .orchidUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Little_orchid_D1102a.jpg/1200px-Little_orchid_D1102a.jpg?20121011205623")
                             .category(category3)
                             .build());
 

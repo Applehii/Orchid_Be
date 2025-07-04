@@ -48,7 +48,7 @@ public class OrchidController {
     // Thêm vào OrchidController.java
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteOrchid(@PathVariable int id) {
+    public ResponseEntity<Void> deleteOrchid(@PathVariable String id) {
         orchidService.deleteOrchid(id);
         return ResponseEntity.ok().build();
     }
